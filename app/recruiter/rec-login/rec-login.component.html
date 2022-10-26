@@ -1,0 +1,61 @@
+<nav class="nav-bar">
+	<h2 class="logo">Project</h2>
+	<div class="nav-items">
+	  <a  routerLink="/homepage">Home</a>
+	  <a routerLink="/user/js-login">JobSeeker Login</a>
+	  <a routerLink="/recruiter/rec-login">Recruiter Login</a>
+	 
+	</div>
+
+  </nav>
+
+<body>
+    <div class="center" style="position:relative ;">
+      <h1>Login</h1>
+      <form action="" method="post" name="login" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+        <div *ngIf="isSubmitted" class="alert alert-success alert-dismissible fade show" role="alert">
+           <strong>Success!</strong> You Login has been succcesful!.
+           <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+       </div>
+       <div *ngIf="isSubmitted2" class="alert alert-danger alert-dismissible fade show" role="alert">
+           <strong>Failed!</strong> You have not not Registered!.
+           <button (click)="closeAlert2()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+       </div> 
+       
+   
+        <div class="txt_field">
+            <label for="exampleInputEmail1" class="form-label"></label>
+            <input type="email" name="loginEmail" class="form-control" placeholder="Enter email"
+                formControlName="loginEmail" [ngClass]="{'fieldInvalid':'(minlength)||(required)'}">
+               
+        </div>
+        <div [hidden]="loginForm.controls['loginEmail'].untouched || loginForm.controls['loginEmail'].valid">
+            <div *ngIf="loginForm.controls['loginEmail'].hasError('required')" class="text-danger">
+                Email required</div>
+            <div *ngIf="loginForm.controls['loginEmail'].hasError('email')" class="text-danger">
+                Email must be in email format</div>
+        </div>       
+
+        <div class="txt_field">
+            <label for="exampleInputEmail1" class="form-label"></label>
+            <input [type]= "changetype?'text':'password'" class="form-control" placeholder="Enter Password"
+                formControlName="loginPass" [ngClass]="{'fieldInvalid':'(pattern)||(required)'}" >
+                <span class="eyeicon" (click)="viewpass()"><i [ngClass] ="visible?'fa fa-eye':'fa fa-eye-slash'"></i></span>
+        </div>
+
+        <div [hidden]="loginForm.controls['loginPass'].untouched || loginForm.controls['loginPass'].valid">
+            <div *ngIf="loginForm.controls['loginPass'].hasError('required')" class="text-danger">
+                Password required</div>
+            <div *ngIf="loginForm.controls['loginPass'].hasError('pattern')" class="text-danger">
+                Password with atleast 1 Alphabet , 1 Number and 1 Symbol</div>
+        </div>
+        <div class="pass">Forgot Password?</div>
+        <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+        <div class="signup_link">
+          Not a member?  <p class="text-center">Don't have account? <a routerLink="/recruiter/jobseeker" id="signup">Sign up here</a></p>
+        </div>
+      </form>
+    </div>
+
+  </body>

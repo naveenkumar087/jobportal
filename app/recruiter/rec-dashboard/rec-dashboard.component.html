@@ -1,0 +1,84 @@
+
+
+<div class="d-flex" id="wrapper">
+
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">DASHBOARD</div>
+    <div class="list-group list-group-flush">
+      <a (click)="ondashboard()" class="list-group-item list-group-item-action bg-light" style="cursor: pointer;">Dashboard</a>
+      <a (click)="onprofile()" class="list-group-item list-group-item-action bg-light" style="cursor: pointer;">My Profile</a>
+      <a (click)="onapplied()" class="list-group-item list-group-item-action bg-light" style="cursor: pointer;">Post jobs</a>
+      <a (click)="onaddition()" class="list-group-item list-group-item-action bg-light" style="cursor: pointer;">Jobs Posted</a>
+      <a (click)="onalerts()" class="list-group-item list-group-item-action bg-light" style="cursor: pointer;">Messages</a>
+      <a  class="list-group-item list-group-item-action bg-light">alerts</a>
+      <a  class="list-group-item list-group-item-action bg-light" style="cursor: pointer;">About</a>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" >
+      <div style="display: flex;justify-content:space-between">
+      <!-- <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button> -->
+      <a  id="menu-toggle" style="color:black;cursor: pointer;"><i class="fa fa-bars" aria-hidden="true"></i></a>
+
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  (click)=" onLogout()">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="username" routerLink="/user/js-profile" style="font-size: 20px;" >{{username | uppercase}}{{lastName | uppercase}} </a>
+          </li>
+        </ul>
+      </div>
+      </div>
+   </nav>
+
+    <div class="container-fluid">
+      <!-- <h1 class="mt-4">Simple Sidebar</h1> -->
+      <div *ngIf="isDashboard" style="text-align:center ;">
+        <h1 style="cursor: pointer;">dashboard</h1>
+        <app-dashboard></app-dashboard>
+      </div>
+    
+      <div *ngIf="isProfile" style="text-align:center ;">
+           <h1 >Profile</h1>
+          <app-rec-profile></app-rec-profile>
+      </div>
+    
+      <div *ngIf="isJob" >
+            <!-- <h1>post job</h1> -->
+            <app-jobpost></app-jobpost>
+      </div>
+      <div *ngIf="isAddition" style="text-align:center;">
+           <h1>job posted</h1>
+           <app-jobcontent></app-jobcontent>
+      </div>
+      <div *ngIf="isMessages" style="text-align:center;">
+        <h1></h1>
+        <app-reccontent></app-reccontent>
+   </div>
+      
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+
+
+
+
+

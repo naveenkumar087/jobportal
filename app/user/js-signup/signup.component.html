@@ -1,0 +1,148 @@
+
+<body>
+      <nav class="nav-bar">
+            <h2 class="logo">Project</h2>
+            <div class="nav-items">
+              <a routerLink="/homepage">Home</a>
+              <a  routerLink="/user/js-login">Jobs</a>
+              <a routerLink="/About">About us</a>
+            </div>
+
+          </nav>
+
+    <div class="main">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="/assets/02.jpg" alt="">
+                </div>
+                <div class="signup-form">
+                  
+                    <form action="#" name="registration"  [formGroup]="registerForm" (ngSubmit)="collectUser()" class="register-form" id="register-form">
+        
+                          <div *ngIf="isSubmitted" class="alert alert-success alert-dismissible fade show"
+                                role="alert">
+                                <strong>Success!</strong> You Registration has been succcesful!.
+                                <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        
+                        <h2>registration form</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+
+                            <label for="name" class="form-label">First Name<span style="color:red">*</span></label>
+                            <input type="text" formControlName="fname" class="form-control" id="name"
+                                placeholder="Enter Firstname" [ngClass]="{'fieldInvalid':'(minlength)||(required)'}">
+                        </div>
+
+                            <div
+                                [hidden]="registerForm.controls['fname'].untouched || registerForm.controls['fname'].valid">
+                                <div *ngIf="registerForm.controls['fname'].hasError('required')" class="text-danger">
+                                    First Name required</div>
+                                <div *ngIf="registerForm.controls['fname'].hasError('minlength')" class="text-danger">
+                                    First Name must be atleast 5 characters</div>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="lastname" class="form-label">Last Name<span style="color:red">*</span></label>
+                            <input type="text" formControlName="lname" class="form-control" id="lastname"
+                                placeholder="Enter Lastname" [ngClass]="{'fieldInvalid':'(minlength)||(required)'}">
+                        </div>
+                            <div
+                                [hidden]="registerForm.controls['lname'].untouched || registerForm.controls['lname'].valid">
+                                <div *ngIf="registerForm.controls['lname'].hasError('required')" class="text-danger">
+                                    Last Name required</div>
+                                <div *ngIf="registerForm.controls['lname'].hasError('minlength')" class="text-danger">
+                                    Last Name must be atleast 5 characters</div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email address<span style="color:red">*</span></label>
+                        <input type="email" formControlName="email" class="form-control" id="email"
+                            placeholder="Enter Email" [ngClass]="{'fieldInvalid':'(email)||(required)'}">
+
+                        <div
+                            [hidden]="registerForm.controls['email'].untouched || registerForm.controls['email'].valid">
+                            <div *ngIf="registerForm.controls['email'].hasError('required')" class="text-danger">
+                                Email required</div>
+                            <div *ngIf="registerForm.controls['email'].hasError('email')" class="text-danger">
+                                Email must be in email format</div>
+                        </div>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label for="password" class="form-label">Password<span style="color:red">*</span></label>
+                            <input type="password" formControlName="password" class="form-control"
+                                placeholder="Enter Password" [ngClass]="{'fieldInvalid':'(pattern)||(required)'}">
+
+                            <div
+                                [hidden]="registerForm.controls['password'].untouched || registerForm.controls['password'].valid">
+                                <div *ngIf="registerForm.controls['password'].hasError('required')" class="text-danger">
+                                    Password required</div>
+                                <div *ngIf="registerForm.controls['password'].hasError('pattern')" class="text-danger">
+                                    Password with atleast 1 Alphabet , 1 Number and 1 Symbol</div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="birth_date">DOB :</label>
+                            <input type="text" name="birth_date" id="birth_date">
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">Pincode :</label>
+                            <input type="text" name="pincode" id="pincode">
+                        </div> -->
+                        <div class="form-group">
+                        <label for="phonenumber" class="form-label">Phone Number<span
+                            style="color:red">*</span></label>
+                    <input type="text" formControlName="phone" class="form-control" id="phone"
+                        placeholder="Enter Phone Number" [ngClass]="{'fieldInvalid':'(pattern)||(required)'}">
+
+                    <div
+                        [hidden]="registerForm.controls['phone'].untouched || registerForm.controls['phone'].valid">
+                        <div *ngIf="registerForm.controls['phone'].hasError('required')" class="text-danger">
+                            Phone Number required</div>
+                        <div *ngIf="registerForm.controls['phone'].hasError('pattern')" class="text-danger">
+                            Phone Number must be 10 characters</div>
+                    </div>
+                        </div>
+
+                        
+                        <div class="form-radio">
+                            <label for="type" class="form-label">Type<span style="color:red">*</span></label><br>
+                            <input type="radio" formControlName="type" value="Salaried">Salaried
+                            <input type="radio" formControlName="type" value="Job Seeker">JobSeeker
+
+                            <div
+                                [hidden]="registerForm.controls['type'].untouched || registerForm.controls['type'].valid">
+                                <div *ngIf="registerForm.controls['type'].hasError('required')" class="text-danger">
+                                    Type is required</div>
+                            </div>
+                        </div>
+                       
+                        <div class="form-submit">
+                            <div class="col-md-12 text-center mb-3">
+                                <button type="submit" class=" btn btn-block mybtn btn-primary">REGISTER </button>
+                            </div>
+
+                         <div class="col-md-12 ">
+                                <div class="form-group">
+                                    <p class="text-center"><a routerLink="/user/js-login" id="signin">Sign in Here</a></p>
+                                </div>
+                           
+                        </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+<!-- </html> -->

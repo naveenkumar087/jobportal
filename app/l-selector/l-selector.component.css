@@ -1,0 +1,67 @@
+.acc0{
+    display: flex;
+}
+.acc h2 {
+    padding-top: 110px;
+    font-size: 45px;
+    color: aliceblue;
+}
+.acc p {
+    font-size: 18px;
+    color: aliceblue;
+}
+.acc button {
+    width: 160px;
+    height: 45px;
+    background-color: darkcyan;
+    border-radius: 30px;
+    font-size: 15px;
+}
+.acc{
+        text-align: center;
+        background-image: url(/./assets/02.jpg);
+        width: 700px;
+        height: 450px ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 30px;
+ }
+.acc2{
+        text-align: center;
+        background-image: url(/./assets/01.jpg);
+        width: 700px;
+        height: 450px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 30px;
+        position: relative;
+}
+.acc2 h2 {
+    padding-top: 110px;
+    font-size: 45px;
+    color: aliceblue;
+}
+.acc2 p {
+    font-size: 18px;
+    color: aliceblue;
+}
+.acc2 button {
+    width: 160px;
+    height: 45px;
+    background-color: darkcyan;
+    border-radius: 30px;
+    font-size: 15px;
+}
+nav{
+    background-color: black;
+}
+.nav-flex{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-flex{
+    display: flex;
+    justify-content: space-around;
+}

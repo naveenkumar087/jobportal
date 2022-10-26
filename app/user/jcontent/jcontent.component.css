@@ -1,0 +1,29 @@
+/* /* table {
+    width: 100%;
+  } */
+   */
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 29%;
+  }
+  th.mat-header-cell {
+    text-align: center;
+}
+.mat-paginator-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 8px;
+    flex-wrap: wrap-reverse;
+    width: 88%;
+}
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 50%;
+}

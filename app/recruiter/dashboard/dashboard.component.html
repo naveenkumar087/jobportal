@@ -1,0 +1,42 @@
+
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container " style="margin-left:95px ;">
+    <div class="row">
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Jobs Posted</h6>
+                    <h2 class="text-right"><i class="fa fa-envelope" aria-hidden="true"></i><span>{{userCount}}</span></h2>
+                    <p class="m-b-0">Jobs posted till now<span class="f-right">351</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-green order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Jobs Applied By Candidates</h6>
+                    {{userCount}}
+                    <h2 class="text-right"><i class="fa fa-users" aria-hidden="true"></i><span>486</span></h2>
+                    <p class="m-b-0">Total Candidates Applied<span class="f-right">351</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Pending Jobs</h6>
+                    <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>486</span></h2>
+                    <p class="m-b-0">Total Jobs Pending<span class="f-right">351</span></p>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+
+<!-- 
+data-ng-repeat="column in row.columns"
+data-ng-attr-id="gadget-{{$parent.$index * row.columns.length + $index}}"> -->

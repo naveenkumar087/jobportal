@@ -1,0 +1,35 @@
+<!-- <p>editor works!</p> -->
+div class="edit">
+    <form [formGroup]="editUser" (ngSubmit)="updateUser()">
+<label>
+    first Name
+</label><br>
+<input type="text" placeholder="enter first name" formControlName="fname"><br>
+
+<label>
+    last Name
+</label><br>
+<input type="text" placeholder="last name" formControlName="lname"><br>
+
+<label>
+    email
+</label><br>
+<input type="text" placeholder="enter email" formControlName="email"><br>
+
+<label>
+    password
+</label><br>
+<input type="text" placeholder="enter password" formControlName="password"><br>
+
+<label>
+    phone number
+</label><br>
+<input type="text" placeholder="phone number" formControlName="phone"><br><br>
+
+<label>
+    type
+</label><br>
+<input type="radio" value="salary" formControlName="salaried">salaried
+<input type="radio" value="jobseeker" formControlName="jobseeker">jobseeker<br><br>
+<button>update</button>
+</form>

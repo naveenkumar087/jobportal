@@ -1,0 +1,42 @@
+{
+  "recruiterDetails": [
+    {
+      "fname": "naveen",
+      "lname": "kumar",
+      "email": "naveen1@gmail.com",
+      "password": "naveen@1234",
+      "phone": "9876543210",
+      "type": "Salaried",
+      "dob": "2022-10-11T18:30:00.000Z",
+      "id": 1
+    },
+    {
+      "fname": "tarun",
+      "lname": "kumar",
+      "email": "tarunkumar11@gmail.com",
+      "password": "naveen@1234",
+      "phone": "09876543210",
+      "type": "Salaried",
+      "dob": "2022-10-19T18:30:00.000Z",
+      "id": 2
+    }
+  ],
+  "jobData": [
+    {
+      "jobtitle": "angular",
+      "joblocation": "hyderabad",
+      "jdesc": "html,css,javascript,angular",
+      "skills": "frontend developer",
+      "recId": "1",
+      "id": 1
+    },
+    {
+      "jobtitle": "frontend developer",
+      "joblocation": "bangalore",
+      "jdesc": "html,css,java script,angular,type script",
+      "skills": "angular",
+      "recId": "2",
+      "id": 2
+    }
+  ]
+}

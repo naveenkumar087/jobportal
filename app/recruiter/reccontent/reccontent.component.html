@@ -1,0 +1,33 @@
+
+
+
+<div> 
+    <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+                <th>s.no</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <!-- <th>password</th> -->
+                <th>phone</th>
+                <!-- <th>Status</th> -->
+             </tr>
+        </thead>
+        <tbody class="table table-light">
+            <tr *ngFor="let user of userData">
+                <td>{{user.id}}</td>
+                <td>{{user.fname}}</td>
+                <td>{{user.lname}}</td>
+                <td>{{user.email}}</td>
+                <!-- <td>{{user.password}}</td> -->
+                <td>{{user.phone}}</td>
+                <!-- <td>{{user.type}}</td> -->
+                <td><button type="button" (click)="deleteUser(user.id)" class="btn btn-danger">Approve</button>
+                <button class="btn btn-success" >Cancel</button>
+                
+             </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

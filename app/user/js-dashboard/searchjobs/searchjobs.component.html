@@ -1,0 +1,33 @@
+
+
+
+<div >
+<div class="container content">
+    <input type="search" placeholder="Search Here" class="form-control" [(ngModel)]="searchText"><br>
+    <div>
+        <table class="table table-dark table-bordered">
+            <thead>
+                <tr>
+                    <th>s.no</th>
+                    <th>job title</th>
+                    <th>job Location</th>
+                    <th>job desc</th>
+                    <th>skills</th>
+
+                </tr>
+            </thead>
+            <tbody class="table table-light">
+                <tr *ngFor="let user of jobData | searchFilter:searchText ;let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{user.jobtitle}}</td>
+                    <td>{{user.joblocation}}</td>
+                    <td>{{user.jdesc}}</td>
+                    <td>{{user.skills}}</td>
+                    <td><button type="button" (click)="onApplyClick(user)" *ngIf="isApply" class="btn btn-danger" >apply</button>
+                       <button type="button" *ngIf="isApplied" class="btn btn-danger">applied</button>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

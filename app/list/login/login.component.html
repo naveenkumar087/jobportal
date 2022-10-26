@@ -1,0 +1,134 @@
+<!-- <p>login works!</p> -->
+
+<!-- login -->
+
+
+<!-- <form action="" method="post" name="login" [formGroup]="loginForm" (ngSubmit)="onLogin()"> -->
+
+    <div *ngIf="isSubmitted" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> You Login has been succcesful!.
+        <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div *ngIf="isSubmitted2" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Failed!</strong> You have not not Registered!.
+        <button (click)="closeAlert2()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" name="loginEmail" class="form-control" placeholder="Enter email"
+            formControlName="loginEmail" [ngClass]="{'fieldInvalid' : '(minlength)||(required)'}">
+    </div>
+    <div [hidden]="loginForm.controls['loginEmail'].untouched || loginForm.controls['loginEmail'].valid">
+        <div *ngIf="loginForm.controls['loginEmail'].hasError('required')" class="text-danger">
+            Email required</div>
+        <div *ngIf="loginForm.controls['loginEmail'].hasError('email')" class="text-danger">
+            Email must be in email format</div>
+    </div> -->
+
+    <!-- <div class="form-group"> -->
+        <!-- <label for="exampleInputEmail1" class="form-label">Password</label> -->
+        <!-- <input type="password" name="loginPass" class="form-control" placeholder="Enter Password"
+            formControlName="loginPass" ngClass="{'fieldInvalid':'(pattern)||(required)'}">
+    </div>
+
+
+    <div [hidden]="loginForm.controls['loginPass'].untouched || loginForm.controls['loginPass'].valid">
+        <div *ngIf="loginForm.controls['loginPass'].hasError('required')" class="text-danger">
+            Password required</div>
+        <div *ngIf="loginForm.controls['loginPass'].hasError('pattern')" class="text-danger">
+            Password with atleast 1 Alphabet , 1 Number and 1 Symbol</div>
+    </div> -->
+
+    <!-- <div class="col-md-12 text-center">
+        <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+    </div>
+    <div class="col-md-12 ">
+        <div class="login-or">
+            <hr class="hr-or">
+            <span class="span-or">or</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <p class="text-center">Don't have account? <a routerLink="/sign-up" id="signup">Sign up
+                here</a></p>
+    </div>
+</form> -->
+
+
+<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Login</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-12 col-lg-10">
+					<div class="wrap d-md-flex">
+						<div class="img" style="background-image: url(./assets/01.jpg);">
+			      </div>
+						<div class="login-wrap p-4 p-md-5">
+			      	<div class="d-flex">
+			      		<div class="w-100">
+			      			<h3 class="mb-4">Sign In</h3>
+			      		</div>
+								<div class="w-100">
+									<p class="social-media d-flex justify-content-end">
+										<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+										<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+									</p>
+								</div>
+			      	</div>
+
+				 <form action="" method="post" name="login" [formGroup]="loginForm" (ngSubmit)="onLogin()" class="signin-form">
+                     <div>
+			      		<div class="form-group mb-3">
+                              <label for="name" class="label">Email address</label>
+                              <input type="email" name="loginEmail" class="form-control" placeholder="Enter email"
+                              formControlName="loginEmail" [ngClass]="{'fieldInvalid' : '(minlength)||(required)'}">
+                      </div>
+                      <div [hidden]="loginForm.controls['loginEmail'].untouched || loginForm.controls['loginEmail'].valid">
+                          <div *ngIf="loginForm.controls['loginEmail'].hasError('required')" class="text-danger">
+                              Email required</div>
+                          <div *ngIf="loginForm.controls['loginEmail'].hasError('email')" class="text-danger">
+                              Email must be in email format</div>
+                      </div>
+			      	</div>
+		            <div class="form-group mb-3">
+                <div>
+                        <label for="password" class="label">Password</label>
+                      <input type="password" name="loginPass" class="form-control" placeholder="Enter Password"
+                      formControlName="loginPass" ngClass="{'fieldInvalid':'(pattern)||(required)'}">
+              </div>
+              <div [hidden]="loginForm.controls['loginPass'].untouched || loginForm.controls['loginPass'].valid">
+                  <div *ngIf="loginForm.controls['loginPass'].hasError('required')" class="text-danger">
+                      Password required</div>
+                  <div *ngIf="loginForm.controls['loginPass'].hasError('pattern')" class="text-danger">
+                      Password with atleast 1 Alphabet , 1 Number and 1 Symbol</div>
+              </div>
+		            </div>
+		            <div class="form-group">
+		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">login</button>
+		            </div>
+		            <div class="form-group d-md-flex">
+		            	<div class="w-50 text-left">
+			            	<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+									  <input type="checkbox" checked>
+									  <span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="w-50 text-md-right">
+										<a href="#">Forgot Password</a>
+									</div>
+		            </div>
+		          </form>
+		          <p class="text-center">Not a member? <a data-toggle="tab" routerLink="/sign-up">Sign Up</a></p>
+		        </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
